@@ -1,0 +1,70 @@
+# PyramidChess Instruction Generator 配置
+# 支持多组配置和不同的生成比例
+
+instruction_generators:
+  easy_target_perception:
+    config:
+      question_id_list: [0, 4, 5]  # TargetPerception 类型问题
+      plot_level_list: ["Easy"]
+      param_list: [0.25]
+      example: false
+      max_turn: null
+    tool_config_path: null  # 可根据需要添加工具配置
+    interaction_config_path: null  # 可根据需要添加交互配置
+    generation_ratio: 1
+    
+  medium_state_prediction:
+    config:
+      question_id_list: [1, 2]  # StatePrediction 类型问题
+      plot_level_list: ["Medium"]
+      param_list: [0.25]
+      example: false
+      max_turn: null
+    tool_config_path: null
+    interaction_config_path: null
+    generation_ratio: 1
+    
+  hard_strategy_optimization:
+    config:
+      question_id_list: [3]  # StrategyOptimization 类型问题
+      plot_level_list: ["Hard"]
+      param_list: [0.25]
+      example: false
+      max_turn: null
+    tool_config_path: null
+    interaction_config_path: null
+    generation_ratio: 1
+    
+  mixed_all_levels:
+    config:
+      question_id_list: [0, 1, 2, 3, 4, 5]  # 所有问题类型
+      plot_level_list: ["Easy", "Medium", "Hard"]  # 所有难度级别
+      param_list: [0.25]
+      example: false
+      max_turn: null
+    tool_config_path: null
+    interaction_config_path: null
+    generation_ratio: 2
+
+# 全局配置
+global_config:
+  # 指令管理器类的完整相对路径
+  class_name: "internbootcamp.bootcamps.pyramidchess.pyramidchess_instruction_generator.PyramidChessInstructionGenerator"
+  
+  # 是否启用随机种子
+  enable_random_seed: true
+  
+  # 默认种子值
+  default_seed: 999
+  
+  # 默认数据集划分和样本数
+  default_split_samples:
+    train: 10000
+    test: 1000
+  
+  # 是否启用数据打乱
+  shuffle: true
+  
+  # 是否生成parquet文件
+  gen_parquet: true
+
