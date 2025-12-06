@@ -5,5 +5,5 @@
 python -m internbootcamp.utils.data_generation \
     --instruction-config internbootcamp/bootcamps/pyramidchess/configs/pyramidchess_instruction_config.yaml \
     --output-dir data/pyramidchess \
-    --split-samples "train:10000,test:1000" \
+    --split-samples "train:100,test:10" \
     --shuffle

@@ -30,7 +30,7 @@ dependencies = [
     "matplotlib>=3.10.7",
     "networkx>=3.4.2",
     # Add dependencies as needed
-    "numpy>=2.2.6",
+    "numpy<2.0.0",
     "openai>=2.9.0",
     "pyyaml>=6.0.3",
     "starlette>=0.50.0",
@@ -38,7 +38,8 @@ dependencies = [
     "tqdm>=4.67.1",
     "transformers>=4.57.3",
     "uvicorn>=0.38.0",
-    "verl @ git+ssh://git@gitlab.pjlab.org.cn:1122/chenyongkang/verl-bootcampv2.git@verl",
+    "verl @ git+https://github.com/volcengine/verl.git@main",
+    "vllm>=0.12.0",
 ]
 
 # -------------------------------

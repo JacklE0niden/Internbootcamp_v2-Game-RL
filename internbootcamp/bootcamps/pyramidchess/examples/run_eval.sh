@@ -11,11 +11,12 @@ fi
 
 echo "使用数据集: $DATASET_PATH"
 
+
+# API 服务启动后，使用本地 API
 python -m internbootcamp.utils.run_evaluation \
   --dataset-path "$DATASET_PATH" \
   --output-dir outputs/pyramidchess/ \
   --api-key "null" \
-  --api-url "http://100.102.196.26:30001/v1" \
-  --api-model "Qwen/Qwen3VL-8B-Instruct" \
+  --api-url "http://localhost:8000/v1" \
+  --api-model "/inspire/hdd/project/multimodal-machine-learning-and-generative-model/public/models/Qwen/Qwen3-VL-8B-Instruct" \
   --reward-calculator-class "internbootcamp.bootcamps.pyramidchess.pyramidchess_reward_calculator.PyramidChessRewardCalculator"
-
